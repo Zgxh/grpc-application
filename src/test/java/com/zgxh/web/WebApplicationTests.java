@@ -1,13 +1,10 @@
 package com.zgxh.web;
 
-import com.google.protobuf.InvalidProtocolBufferException;
 import com.zgxh.web.grpc.server.GrpcServer;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
-import java.util.Arrays;
 
 @SpringBootTest
 class WebApplicationTests {
@@ -17,6 +14,6 @@ class WebApplicationTests {
 
     @Test
     void contextLoads() {
-        System.out.println(grpcServer.getGrpcServices());
+        // System.out.println(grpcServer.getGrpcServices());
     }
 }
