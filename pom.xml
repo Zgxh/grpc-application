@@ -64,8 +64,8 @@
 
         <dependency>
             <groupId>com.zgxh</groupId>
-            <artifactId>grpc</artifactId>
-            <version>0.0.1-20211020.080836-1</version>
+            <artifactId>grpc-zgxh</artifactId>
+            <version>0.0.1-20211020.130253-2</version>
         </dependency>
     </dependencies>
 

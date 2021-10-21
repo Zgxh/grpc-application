@@ -1,31 +1,22 @@
 package com.zgxh.web;
 
 import com.google.protobuf.InvalidProtocolBufferException;
-import com.zgxh.web.protobase.helloworld.HelloRequest;
+import com.zgxh.web.grpc.server.GrpcServer;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import javax.annotation.Resource;
 import java.util.Arrays;
 
-// @SpringBootTest
+@SpringBootTest
 class WebApplicationTests {
+
+    @Resource
+    private GrpcServer grpcServer;
 
     @Test
     void contextLoads() {
+        System.out.println(grpcServer.getGrpcServices());
     }
-
-    @Test
-    void simpleTest() {
-        HelloRequest gangReq = HelloRequest.newBuilder().setName("ligang").build();
-        byte[] gangBytes = gangReq.toByteArray();
-        System.out.println("serialized data: " + Arrays.toString(gangBytes));
-
-        try {
-            HelloRequest helloRequest = HelloRequest.parseFrom(gangBytes);
-            System.out.println("parsed data: " + helloRequest.getName());
-        } catch (InvalidProtocolBufferException e) {
-            e.printStackTrace();
-        }
-    }
-
 }
