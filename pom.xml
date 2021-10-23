@@ -45,27 +45,32 @@
             <version>3.18.1</version>
         </dependency>
 
+        <!--<dependency>-->
+        <!--    <groupId>io.grpc</groupId>-->
+        <!--    <artifactId>grpc-netty-shaded</artifactId>-->
+        <!--    <version>1.41.0</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--    <groupId>io.grpc</groupId>-->
+        <!--    <artifactId>grpc-protobuf</artifactId>-->
+        <!--    <version>1.41.0</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--    <groupId>io.grpc</groupId>-->
+        <!--    <artifactId>grpc-stub</artifactId>-->
+        <!--    <version>1.41.0</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>io.grpc</groupId>
-            <artifactId>grpc-netty-shaded</artifactId>
-            <version>1.40.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-protobuf</artifactId>
-            <version>1.41.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-stub</artifactId>
+            <artifactId>grpc-all</artifactId>
             <version>1.41.0</version>
         </dependency>
 
-
+        <!--grpc服务接口-->
         <dependency>
             <groupId>com.zgxh</groupId>
             <artifactId>grpc-zgxh</artifactId>
-            <version>0.0.1-20211020.130253-2</version>
+            <version>0.0.1-20211022.131025-1</version>
         </dependency>
     </dependencies>
 

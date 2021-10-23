@@ -8,6 +8,8 @@ import com.zgxh.web.grpc.common.PostProcessGrpcMethod;
 import io.grpc.stub.StreamObserver;
 
 /**
+ * hello grpc 服务
+ *
  * @author Yu Yang
  */
 @GrpcService

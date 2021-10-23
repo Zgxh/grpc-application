@@ -2,11 +2,13 @@ package com.zgxh.web.grpc.server;
 
 import com.zgxh.grpc.hello.HelloServiceGrpc;
 import com.zgxh.web.grpc.annotation.GrpcService;
+import com.zgxh.web.grpc.service.HelloGrpcService;
 import com.zgxh.web.utils.SpringUtil;
 import io.grpc.BindableService;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.ServerServiceDefinition;
+import io.grpc.protobuf.services.ProtoReflectionService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -37,16 +39,17 @@ public class GrpcServer {
      */
     public void startServer() throws IOException {
         List<BindableService> grpcServices = getGrpcServices();
-        ServerBuilder<?> serverBuilder = ServerBuilder.forPort(Integer.parseInt(port));
+        ServerBuilder<?> serverBuilder = ServerBuilder.forPort(Integer.parseInt(port))
+                .addService(ProtoReflectionService.newInstance());
         grpcServices.forEach(serverBuilder::addService);
         server = serverBuilder.build().start();
-        log.info("Grpc server start! Listening on port " + port);
+        log.info("Grpc server start! Listening on port: " + port + " (grpc).");
 
         // 在spring停止运行的时候关闭 grpc 服务
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             log.info("try to shutdown the grpc server....");
             try {
-                GrpcServer.this.stopServer();
+                this.stopServer();
             } catch (Exception e) {
                 log.error("failed to stop the grpc server!");
                 e.printStackTrace();
