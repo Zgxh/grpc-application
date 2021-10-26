@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.5.5</version>
+        <version>2.5.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.zgxh</groupId>
@@ -21,7 +21,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+        <!--aop-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -44,22 +48,6 @@
             <artifactId>protobuf-java-util</artifactId>
             <version>3.18.1</version>
         </dependency>
-
-        <!--<dependency>-->
-        <!--    <groupId>io.grpc</groupId>-->
-        <!--    <artifactId>grpc-netty-shaded</artifactId>-->
-        <!--    <version>1.41.0</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--    <groupId>io.grpc</groupId>-->
-        <!--    <artifactId>grpc-protobuf</artifactId>-->
-        <!--    <version>1.41.0</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--    <groupId>io.grpc</groupId>-->
-        <!--    <artifactId>grpc-stub</artifactId>-->
-        <!--    <version>1.41.0</version>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-all</artifactId>

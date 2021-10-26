@@ -4,7 +4,6 @@ import com.zgxh.grpc.hello.HelloRequest;
 import com.zgxh.grpc.hello.HelloResponse;
 import com.zgxh.grpc.hello.HelloServiceGrpc;
 import com.zgxh.web.grpc.annotation.GrpcService;
-import com.zgxh.web.grpc.common.PostProcessGrpcMethod;
 import io.grpc.stub.StreamObserver;
 
 /**
@@ -22,6 +21,6 @@ public class HelloGrpcService extends HelloServiceGrpc.HelloServiceImplBase {
                 .setCode(200)
                 .setMessage("hello, " + name)
                 .build();
-        PostProcessGrpcMethod.postProcessAfterResponse(responseObserver, response);
+        responseObserver.onNext(response);
     }
 }

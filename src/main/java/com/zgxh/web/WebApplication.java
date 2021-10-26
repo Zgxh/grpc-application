@@ -11,7 +11,10 @@ import java.io.IOException;
 public class WebApplication {
 
     public static void main(String[] args) throws IOException {
+        // 启动spring+tomcat
         SpringApplication.run(WebApplication.class, args);
+
+        // 启动GrpcServer
         SpringUtil.getBean("grpcServer", GrpcServer.class).startServer();
     }
 }
