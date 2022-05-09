@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 @Slf4j
-public class GrpcServiceOnCompletedAspect {
+public class GrpcServiceBeforeReturnAspect {
 
     /**
      * 匹配所有grpc方法
@@ -33,6 +33,7 @@ public class GrpcServiceOnCompletedAspect {
         try {
             StreamObserver streamObserver = ((StreamObserver) args[1]);
             streamObserver.onCompleted();
+            log.info("Grpc service [{}] succeed with args: [{}]", joinPoint.getSignature().getName(), args[0]);
         } catch (Exception e) {
             log.error("GrpcServiceOnCompletedAspect >> postProcessGrpcServiceMethodWhenGetResponse. failed to cast args", e);
         }

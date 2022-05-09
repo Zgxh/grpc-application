@@ -3,7 +3,7 @@ package com.zgxh.web.grpc.service;
 import com.zgxh.grpc.hello.HelloRequest;
 import com.zgxh.grpc.hello.HelloResponse;
 import com.zgxh.grpc.hello.HelloServiceGrpc;
-import com.zgxh.web.grpc.annotation.GrpcService;
+import com.zgxh.grpcserver.annotation.GrpcService;
 import io.grpc.stub.StreamObserver;
 
 /**
